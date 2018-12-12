@@ -1,4 +1,6 @@
 # deploy-local-ambari
+This repos is built by modifying the [caochong ambari](https://github.com/weiqingy/caochong)
+
 dependencies:
 - docker
 
