@@ -1,4 +1,5 @@
-FROM centos:6
+# FROM centos:6
+FROM centos:7
 
 MAINTAINER Liming Zhang <tongjiyiming@gmail.com>
 
@@ -24,7 +25,7 @@ RUN wget -O /etc/yum.repos.d/ambari.repo http://public-repo-1.hortonworks.com/am
 
 RUN yum install ambari-server -y
 RUN ambari-server setup -s
-
+RUN yum install numpy -y
 RUN yum clean all
 
 EXPOSE 10-90 

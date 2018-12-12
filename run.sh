@@ -51,7 +51,7 @@ docker network create tongjiyiming 2> /dev/null
 docker rm -f $(docker ps -a -q -f "name=$NODE_NAME_PREFIX") 2>&1 > /dev/null
 
 # launch containers
-master_id=$(docker run -d --net tongjiyiming --memory-reservation 12GB -p $PORT:8080 --name $NODE_NAME_PREFIX-0 tongjiyiming-ambari)
+master_id=$(docker run -d --net tongjiyiming --memory-reservation 12GB -p $PORT:8080 --name $NODE_NAME_PREFIX-0 -v /home/liming/CS657_Fall18:/home/hdfs/CS657_Fall18/ tongjiyiming-ambari)
 echo ${master_id:0:12} > hosts
 for i in $(seq $((N-1)));
 do
